@@ -51,8 +51,3 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D92D16AA5A794882B4311D8BDB301BBE }}
           package: .
-
-      - name: 'Run node app.js'
-        run: |
-          cd $GITHUB_WORKSPACE/userapp
-          node app.js
