@@ -31,9 +31,9 @@ app.use(cors())
 
 
 const conn = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "",
+	host: "pranicure.mysql.database.azure.com",
+	user: "pranicure",
+	password: "admin@2023",
 	database: "pranicure",
 
 	// host: "bkiavxeu5zu9pmpwonnz-mysql.services.clever-cloud.com",
@@ -462,7 +462,7 @@ app.post("/casedesp", (req, res) => {
   
   
   })  
-  const upload = multer({ dest: 'C:/PraniCare/userapp/public/incidentimages/' });
+  const upload = multer({ dest: 'C:/home/site/wwwroot/userapp/public/incidentimages/' });
 
   app.post("/uploadmultiple", upload.array("picfile"), (req, res) => {
     console.log("Files uploaded:", req.files);
@@ -470,7 +470,7 @@ app.post("/casedesp", (req, res) => {
     if (req.files && req.files.length > 0) {
       const uploadedFiles = req.files.map(file => {
         const filePath = file.path;
-        const newFilePath = "C:/PraniCare/userapp/public/incidentimages/" + file.originalname;
+        const newFilePath = "C:/home/site/wwwroot/userapp/public/incidentimages/" + file.originalname;
         
         fs.rename(filePath, newFilePath, err => {
           if (err) {
@@ -540,7 +540,7 @@ app.post(
 		let form = new formidable.IncomingForm();
 		form.parse(req, function (error, fields, file) {
 			let filepath = file.picfile.filepath;
-			let newpath = "C:/PraniCare/userapp/public/profileimages/";
+			let newpath = "C:/home/site/wwwroot/userapp/public/profileimages/";
 			
 			newpath += file.picfile.originalFilename;
 			console.log(filepath)
