@@ -593,7 +593,11 @@ async function mail1(to, sub, body,res) {
     });
 }
 
-
+app.get("/hello", (req, res) => {
+  console.log("Received a GET request for the /qr route."); // Log the text message to the console
+  // You can perform other actions here, such as sending a response to the client
+  res.send("Hello, this is the /qr route!");
+});
 
 
 
