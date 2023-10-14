@@ -39,7 +39,7 @@ $("#login").on("click",function(){
         
         }
         $.ajax({
-            url:"http://localhost:7000/login",
+            url:"https://pranicure.azurewebsites.net/login",
             type:"post",
             dataType: "json",
             data: { user:name,Pass:pass
